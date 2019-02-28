@@ -7,8 +7,8 @@ const CurrentlyReading = (props) => {
       <h2 className="bookshelf-title">Currently Reading</h2>
       <div className="bookshelf-books">
         <ol className="books-grid">
-          {props.books.filter(book => book.status === 'CR').map((book) => (
-              <li><Book book={book}/></li>
+          {Object.keys(props.books).filter((key) => props.books[key].shelf === 'currentlyReading').map((key) => (
+            <li key={props.books[key].id}><Book book={props.books[key]} changeStatus={props.changeStatus} /></li>
           ))}
         </ol>
       </div>
