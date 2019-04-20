@@ -2,7 +2,7 @@ import React from 'react';
 
 const Book = (props) => {
   const handleChange = (event) => {
-    if (event.target.value !== 'none') props.changeStatus(props.book, event.target.value)
+    props.changeStatus(props.book, event.target.value)
   }
   return (
     <div className="book">
